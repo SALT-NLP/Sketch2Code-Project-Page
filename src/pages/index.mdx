@@ -1,0 +1,169 @@
+---
+layout: ../layouts/Layout.astro
+title: Sketch2Code Evaluating Vision-Language Models for Interactive Web Design Prototyping
+description: Simple project page template for your research paper, built with Astro and Tailwind CSS
+favicon: /salt-logo.png
+thumbnail: /screenshot.png
+---
+
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+
+import Header from "../components/Header.astro";
+import TwoColumns from "../components/TwoColumns.astro";
+import Video from "../components/Video.astro";
+import YouTubeVideo from "../components/YouTubeVideo.astro";
+import PDF from "../components/PDF.astro";
+import Figure from "../components/Figure.astro";
+import LaTeX from "../components/LaTeX.astro";
+import SmallCaps from "../components/SmallCaps.astro";
+import Splat from "../components/Splat.tsx"
+
+import CodeBlock from "../components/CodeBlock.astro";
+export const components = {pre: CodeBlock}
+
+import demo_placeholder from "../assets/demo_placeholder_trimed.mp4";
+import flowchart12 from "../assets/flowchart12.png";
+import table1 from "../assets/table1.png";
+import multi_turn_examples_5 from "../assets/multi_turn_examples_5.svg";
+import multiturn_results_main_4 from "../assets/multiturn_results_main_4.jpg";
+import exp1 from "../assets/exp1.png";
+import exp2 from "../assets/exp2.png";
+import exp3 from "../assets/exp3.png";
+import exp4 from "../assets/exp4.png";
+
+{/* conference="Conference Name" */}
+{/* notes={[
+  {
+    symbol: "*",
+    text: "author note one",
+  },
+  {
+    symbol: "†",
+    text: "author note two",
+  },
+]} */}
+
+<Header
+  title={"Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping"}
+  authors={[
+    {
+      name: "Ryan Li",
+      institution: "Stanford University",
+    },
+    {
+      name: "Yanzhe Zhang",
+      institution: "Goergia Tech",
+    },
+    {
+      name: "Diyi Yang",
+      institution: "Stanford University",
+    },
+  ]}
+  links={[
+    {
+      name: "Paper",
+      url: "",
+      icon: "fa-solid:file-pdf",
+    },
+    {
+      name: "Code",
+      url: "",
+      icon: "mdi:github",
+    },
+    {
+      name: "arXiv",
+      url: "",
+      icon: "academicons:arxiv",
+    },
+  ]}
+  />
+
+<Video source={demo_placeholder} />
+This is a placeholder I will get rid of it later.
+
+<div class="bg-gray-100 max-w-[60rem]">
+<h2 class="text-center text-3xl font-bold">Abstract</h2>
+<div class="p-4 max-w-[60rem] m-auto">
+{/* ## Abstract */}
+Sketches are a natural and accessible medium for UI designers to conceptualize early-stage ideas. However, existing research on UI/UX automation often requires high-fidelity inputs like Figma designs or detailed screenshots, limiting accessibility and impeding efficient design iteration. To bridge this gap, we introduce Sketch2Code, a benchmark that evaluates state-of-the-art Vision Language Models (VLMs) on automating the conversion of rudimentary sketches into webpage prototypes. Beyond end-to-end benchmarking, Sketch2Code supports interactive agent evaluation that mimics real-world design workflows, where a VLM-based agent iteratively refines its generations by communicating with a simulated user, either passively receiving feedback instructions or proactively asking clarification questions. We comprehensively analyze ten commercial and open-source models, showing that Sketch2Code is challenging for existing VLMs; even the most capable models struggle to accurately interpret sketches and formulate effective questions that lead to steady improvement. Nevertheless, a user study with UI/UX experts reveals a significant preference for proactive question-asking over passive feedback reception, highlighting the need to develop more effective paradigms for multi-turn conversational agents
+</div>
+</div>
+
+## Overview
+
+Sketch2Code consists of 731 human-drawn sketches paired with 484 real-world webpages with varying levels of precisions and drawing styles. To mirror realistic design workflows and study how well VLMs can interact with humans, our framework further introduces two multi-turn evaluation scenarios between a sketch2code agent and a human/simulated user: (1) the sketch2code agent follows feedback from the user (***feedback following***) and (2) the sketch2code agent proactively asks the user questions for design details and clarification (***question asking***). To this end, our framework assesses not only the ability of models to generate initial implementations based on abstract inputs but also their capacity to adapt and evolve these implementations in response to user feedback.
+
+<Figure
+    caption="Benchmark Overview: direct generation (left) and multi-turn interactive evaluations (right)"
+  >
+    <Image src={flowchart12} alt="Figure 1" />
+</Figure>
+
+## Benchmark Performance: Direct Generation
+
+We evaluated 8 commercial models (GPT-4o, GPT-4o mini, Gemini 1.5 Pro, Gemini 1.5 Flash, Claude 3.5 Sonnet, Claude 3 Opus/Sonnet/Haiku), and 2 open-source models (Llava-1.6-8b and InternVL2-8b). Claude 3.5 Sonnet leads the performance in single-turn generations, achieving the best results in both automated metrics and human satisfaction rates.
+
+<Figure
+    caption="Results: Direct Generation"
+  >
+    <Image src={table1} alt="Table 1" />
+</Figure>
+
+## Benchmark Performance: Multi-turn Evaluations
+
+<Figure
+    caption="Multi-turn Generation Examples"
+  >
+    <Image src={multi_turn_examples_5} alt="Figure 2" />
+</Figure>
+
+We find that all models displayed noticeable improvements in feedback following. The best commercial models achieves improvements of up to 7.1% in visual similarity and 2.7% in IoU-based layout similarity within five rounds of interaction. Quesion asking, however, appears to be a more challenging task as all models struggled to pose effective questions about the sketches and showed very few improvements with statistical significance.
+
+<Figure
+    caption="Results: Multi-turn Evaluations"
+  >
+    <Image src={multiturn_results_main_4} alt="Figure 3" />
+</Figure>
+
+{/* <TwoColumns>
+  <Figure slot="left" caption="Take a look at this YouTube video.">
+    <YouTubeVideo videoId="wjZofJX0v4M" />
+  </Figure>
+  <Figure slot="right" caption="Now look at this Gaussian Splat, rendered with a React component.">
+    <Splat client:idle />
+  </Figure>
+</TwoColumns> */}
+
+## Test Set Examples
+
+<div class="bg-gray-100 max-w-[80rem]">
+<TwoColumns>
+  <Figure slot="left">
+    <Image src={exp1} alt="Exp 1" />
+  </Figure>
+  <Figure slot="right">
+    <Image src={exp2} alt="Exp 2" />
+  </Figure>
+
+  <Figure slot="left">
+    <Image src={exp3} alt="Exp 3" />
+  </Figure>
+  <Figure slot="right">
+    <Image src={exp4} alt="Exp 4" />
+  </Figure>
+</TwoColumns>
+</div>
+
+
+## BibTeX citation
+
+```
+@misc{roman2024academic,
+  author = "{Roman Hauksson}",
+  title = "Academic Project Page Template",
+  year = "2024",
+  howpublished = "\url{https://research-template.roman.technology}",
+}
+```

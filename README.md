@@ -1,0 +1,3 @@
+This is the repository that contains source code for the Sketch2Code Website
+
+This page was built using [Roman Hauksson's academic project page template](https://github.com/RomanHauksson/academic-project-astro-template), which was adapted from [Eliahu Horwitz's template](https://github.com/eliahuhorwitz/Academic-project-page-template), which was adapted from [Keunhong Park's project page for *Nerfies*](https://nerfies.github.io/). It is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
