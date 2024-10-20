@@ -12,5 +12,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "github-light"
     }
-  }
+  },
+  site: 'https://salt-nlp.github.io/Sketch2Code-Project-Page',
+  base: '/Sketch2Code-Project-Page/', 
 });
