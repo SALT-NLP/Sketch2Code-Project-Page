@@ -26,6 +26,7 @@ export const components = {pre: CodeBlock}
 import demo_placeholder from "../assets/demo_placeholder_trimed.mp4";
 import flowchart12 from "../assets/flowchart12.png";
 import table1 from "../assets/table1.png";
+import img1 from "../assets/img1.png";
 import multi_turn_examples_5 from "../assets/multi_turn_examples_5.svg";
 import multiturn_results_main_4 from "../assets/multiturn_results_main_4.jpg";
 import exp1 from "../assets/exp1.png";
@@ -108,7 +109,7 @@ We evaluated 8 commercial models (GPT-4o, GPT-4o mini, Gemini 1.5 Pro, Gemini 1.
 <Figure
     caption="Results: Direct Generation"
   >
-    <Image src={table1} alt="Table 1" />
+    <Image src={img1} alt="Figure 2" />
 </Figure>
 
 ## Benchmark Performance: Multi-turn Evaluations
@@ -116,7 +117,7 @@ We evaluated 8 commercial models (GPT-4o, GPT-4o mini, Gemini 1.5 Pro, Gemini 1.
 <Figure
     caption="Multi-turn Generation Examples"
   >
-    <Image src={multi_turn_examples_5} alt="Figure 2" />
+    <Image src={multi_turn_examples_5} alt="Figure 3" />
 </Figure>
 
 We find that all models displayed noticeable improvements in feedback following. The best commercial models achieves improvements of up to 7.1% in visual similarity and 2.7% in IoU-based layout similarity within five rounds of interaction. Quesion asking, however, appears to be a more challenging task as all models struggled to pose effective questions about the sketches and showed very few improvements with statistical significance.
@@ -124,7 +125,7 @@ We find that all models displayed noticeable improvements in feedback following.
 <Figure
     caption="Results: Multi-turn Evaluations"
   >
-    <Image src={multiturn_results_main_4} alt="Figure 3" />
+    <Image src={multiturn_results_main_4} alt="Figure 4" />
 </Figure>
 
 {/* <TwoColumns>
