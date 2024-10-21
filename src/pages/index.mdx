@@ -23,7 +23,7 @@ import Splat from "../components/Splat.tsx"
 import CodeBlock from "../components/CodeBlock.astro";
 export const components = {pre: CodeBlock}
 
-import demo_placeholder from "../assets/demo_placeholder_trimed.mp4";
+import demo from "../assets/demo.mp4";
 import flowchart12 from "../assets/flowchart12.png";
 import table1 from "../assets/table1.png";
 import img1 from "../assets/img1.png";
@@ -55,7 +55,7 @@ import exp4 from "../assets/exp4.png";
     },
     {
       name: "Yanzhe Zhang",
-      institution: "Goergia Tech",
+      institution: "Georgia Tech",
     },
     {
       name: "Diyi Yang",
@@ -70,12 +70,12 @@ import exp4 from "../assets/exp4.png";
     },
     {
       name: "Code",
-      url: "",
+      url: "https://github.com/SALT-NLP/Sketch2Code",
       icon: "mdi:github",
     },
     {
       name: "Dataset",
-      url: "",
+      url: "https://huggingface.co/datasets/SALT-NLP/Sketch2Code",
       icon: "mdi:database",
     },
     {
@@ -86,8 +86,7 @@ import exp4 from "../assets/exp4.png";
   ]}
   />
 {/* <div class="max-w-[60rem]"> */}
-<Video source={demo_placeholder} />
-This is a placeholder I will get rid of it later.
+<Video source={demo} />
 
 <div class="bg-gray-100 max-w-[50rem]">
 <h2 class="text-center text-3xl font-bold">Abstract</h2>
@@ -167,10 +166,10 @@ We find that all models displayed noticeable improvements in feedback following.
 ## BibTeX citation
 
 ```
-@misc{roman2024academic,
-  author = "{Roman Hauksson}",
-  title = "Academic Project Page Template",
+@misc{li2024sketch2code,
+  author = "{Ryan Li and Yanzhe Zhang and Diyi Yang}",
+  title = "Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping",
   year = "2024",
-  howpublished = "\url{https://research-template.roman.technology}",
+  {/* howpublished = "\url{https://research-template.roman.technology}", */}
 }
 ```
